@@ -1,0 +1,391 @@
+@font-face {
+  font-family: 'Neutraface 2 Text';
+  src: url('/assets/fonts/Neutraface2Text-BookItalic.woff2') format('woff2'),
+    url('/assets/fonts/Neutraface2Text-BookItalic.woff') format('woff'),
+    url('/assets/fonts/Neutraface2Text-BookItalic.svg#Neutraface2Text-BookItalic')
+      format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neutraface 2 Text';
+  src: url('/assets/fonts/Neutraface2Text-Bold.woff2') format('woff2'),
+    url('/assets/fonts/Neutraface2Text-Bold.woff') format('woff'),
+    url('/assets/fonts/Neutraface2Text-Bold.svg#Neutraface2Text-Bold')
+      format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neutraface 2 Text';
+  src: url('/assets/fonts/Neutraface2Text-BoldItalic.woff2') format('woff2'),
+    url('/assets/fonts/Neutraface2Text-BoldItalic.woff') format('woff'),
+    url('/assets/fonts/Neutraface2Text-BoldItalic.svg#Neutraface2Text-BoldItalic')
+      format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neutraface 2 Text';
+  src: url('/assets/fonts/Neutraface2Text-Book.woff2') format('woff2'),
+    url('/assets/fonts/Neutraface2Text-Book.woff') format('woff'),
+    url('/assets/fonts/Neutraface2Text-Book.svg#Neutraface2Text-Book')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'Neutraface 2 Text', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1.3em;
+  font-weight: 300;
+  margin-bottom: 8px;
+  color: #5d50eb;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+p {
+  font-size: 1em;
+}
+
+.main {
+  max-width: 1200px;
+  margin: auto auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow-x: hidden;
+  /* overflow-y: visible; */
+  /* width: 100%; */
+}
+
+small {
+  color: #9b9b9b;
+  font-size: 80%;
+  /* line-height: 0.8em; */
+}
+
+.form {
+  padding: 1.5em;
+  margin-bottom: 1em;
+  background-color: #9013fe;
+  color: #ffffff;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  flex-flow: wrap;
+  position: relative;
+  /* display: none; */
+}
+
+.form__title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__div {
+  /* display: block; */
+  margin-bottom: 0.5em;
+  /* display: flex; */
+  flex: 1 30%;
+}
+
+label {
+  font-weight: normal;
+  font-size: 80%;
+}
+
+input,
+.button,
+select {
+  box-sizing: border-box;
+  font-family: 'Neutraface 2 Text', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  border: 0;
+  border: 1px solid transparent;
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  /* max-width: 100%; */
+  padding: 0.5em 1em;
+}
+
+a {
+  color: #9013fe;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: #3a2be0;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  float: left;
+  width: 60%;
+  margin-right: 40%;
+  border-radius: 0.25em;
+  transition: transform 0.3s ease-out;
+}
+
+.button:hover {
+  box-shadow: 2px 2px 40px 0 rgb(200, 50, 255, 0.8);
+}
+
+.button:active {
+  transform: translateY(10%);
+}
+
+input:focus,
+input:active,
+button:focus {
+  outline: 0;
+}
+
+input:focus {
+  border: 1px solid #bb74fa;
+  box-shadow: 2px 2px 20px 0 rgb(200, 50, 255, 0.8);
+}
+
+.flags {
+  padding-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: center;
+  align-content: flex-start;
+  margin-left: -0.75em;
+}
+
+.flags img {
+  width: 1.8em;
+  height: 1.8em;
+  padding: 1em;
+}
+
+.content {
+  padding-top: 50vh;
+  z-index: 100;
+  position: relative;
+}
+
+.map {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  /* height: 100vh; */
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+.map svg {
+  width: 150%;
+  height: auto;
+  transform: translateX(10%);
+}
+
+.map svg path {
+  stroke-width: 1px;
+  stroke: rgb(200, 50, 255, 0.3);
+  fill: none;
+}
+
+.parsley-errors-list {
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top: 4px;
+  padding-left: 0;
+}
+
+.parsley-errors-list li {
+  list-style-type: none;
+  color: #ff8e8e;
+}
+
+.form__message {
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.3);
+  width: 300px;
+  border-radius: 4px;
+  position: absolute;
+  right: -0%;
+  z-index: 200;
+  top: -20%;
+  color: #4a4a4a;
+  font-size: 0.8em;
+  visibility: hidden;
+}
+
+.form__message.error {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.form__message:before {
+  content: '';
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(194, 225, 245, 0);
+  border-right-color: #ffffff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.form__message__closebtn {
+  color: #ff0000;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5em;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.links {
+  padding-bottom: 40px;
+}
+
+.logo,
+h1,
+.flags,
+.form,
+.small,
+.links,
+.subtext,
+.map {
+  visibility: hidden;
+}
+
+.language-select {
+  max-width: 200px;
+  padding-bottom: 5em;
+}
+
+.language-dropdown {
+  padding: 1em;
+}
+
+.language-dropdown span {
+  padding-right: 1em;
+  vertical-align: middle;
+  line-height: 1em;
+}
+
+.language-dropdown img {
+  height: 1em;
+  padding-top: 4px;
+}
+
+/* Breakpoint */
+@media only screen and (min-width: 640px) {
+  .main {
+    /* max-width: 1200px; */
+    /* margin: auto auto; */
+    padding-left: 4em;
+    padding-right: 4em;
+    /* overflow-x: hidden; */
+  }
+
+  h1 {
+    font-size: 2.6em;
+  }
+
+  .content {
+    width: 80%;
+    padding-top: 38vh;
+  }
+
+  .vh60 {
+    width: 60vh;
+  }
+
+  .form__row {
+    flex-direction: row;
+    flex-basis: 30%;
+    flex-wrap: wrap;
+  }
+
+  .form__div {
+    /* display: block; */
+    padding-right: 1.5em;
+  }
+
+  .map {
+    width: 100%;
+    transform: translateX(20%);
+  }
+
+  .map svg {
+    width: 120%;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .flags {
+    max-width: 100%;
+    margin-left: -1.25em;
+  }
+
+  .flags img {
+    height: 2.5em;
+    width: 2.5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .map svg {
+    width: 60%;
+    transform: translateX(40%);
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .vh60 {
+    width: 70vh;
+  }
+}
+
+/* .subtext {
+  position: relative;
+  display: block;
+} */
+
+/* Parsley */

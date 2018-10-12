@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Seek Afrique
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.css", rel="stylesheet")
+
+    link(href="/assets/app.css", rel="stylesheet")
+
+  body
+    .main
+      .content
+        .logo
+          img(src="/assets/img/seekafrique-logo.svg", alt="SeekAfrique Logo")
+        h1.vh60 #{__('header')}
+        p.vh60.subtext #{__('subtext')}
+        .flags
+          -
+            var countries = [
+              {
+                flag: "nigeria",
+                name: "Nigeria"
+              },
+              {
+                flag: "ghana",
+                name: "Ghana"
+              },
+              {
+                flag: "senegal",
+                name: "Senegal"
+              },
+              {
+                flag: "ivory-coast",
+                name: "Ivory Coast"
+              },
+              {
+                flag: "benin",
+                name: "Benin"
+              },
+              {
+                flag: "burkina-faso",
+                name: "Burkina Faso"
+              },
+              {
+                flag: "cape-verde",
+                name: "Cabo Verde"
+              },
+              {
+                flag: "guinea",
+                name: "Guinea"
+              },
+              {
+                flag: "guinea-bissau",
+                name: "Guinea Bissau"
+              },
+              {
+                flag: "liberia",
+                name: "Liberia"
+              },
+              {
+                flag: "mali",
+                name: "Mali"
+              },
+              {
+                flag: "niger",
+                name: "Niger"
+              },
+              {
+                flag: "sierra-leone",
+                name: "Sierra Leone"
+              },
+              {
+                flag: "togo",
+                name: "Togo"
+              }
+            ]
+
+          each country in countries
+            img(src="/assets/img/flags/"+country.flag+".svg", alt=country.name)
+
+        -
+          var ecowasCountries = [
+            'Benin',
+            'Burkina Faso',
+            'Cabo Verde',
+            'Cote D\'Ivoire',
+            'The Gambia',
+            'Ghana',
+            'Guinea',
+            'Guinea Bissau',
+            'Liberia',
+            'Mali',
+            'Niger',
+            'Nigeria',
+            'Senegal',
+            'Sierra Leone',
+            'Togo'
+          ]
+
+        form(data-parsley-validate method="post" action="/process").form.js-form
+          h3.form__title #{__('form-title')}
+          .form__row
+            .form__div
+              label(for="name") #{__('name')}
+                input(name="name" data-parsley-error-message=__('error-message-name') data-parsley-required type="text").form-name
+            .form__div
+              label(for="name") #{__('email-address')}
+                input(name="email" data-parsley-error-message=__('error-message-email') data-parsley-required data-parsley-type="email" type="email").form-email
+            .form__div
+              label(for="nationality") #{__('nationality')}
+                select(name="nationality").js-countries.form-nationality
+                  for nationality in ecowasCountries
+                    option(value=nationality) #{nationality}
+            .form__div
+              input(name="_csrf" type="hidden" value=csrfToken).csrftoken
+              label(for="submit") &nbsp;
+               input(type="submit", value=__('sign-me-up')).button
+            .form__message
+              p.form__message__content SeekAfrique offre aux étudiants et aux jeunes diplômés de l’Afrique de l’Ouest des compétences concurrentielles à l’échelle mondiale par le
+              .form__message__closebtn.js-close-form &#10540;
+
+
+        small.small #{__('small-text')}
+
+        .contacts
+        p.links
+          a(href="mailto: info@seekafrique.com", title="Email Seek Afrique") info@seekafrique.com
+          | &nbsp; &nbsp; | &nbsp; &nbsp;
+          a(href="mailto: partners@seekafrique.com", title="Email Seek Afrique partners") partners@seekafrique.com
+
+        .language-select
+          label(for="language") Language/La langue
+          select(name="language").js-language
+            option(value="") #{__('select-language')}
+            option(value="/en") English
+            option(value="/fr") Français
+
+      .map !{map}
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js")
+    script(src="/assets/js/splittext.js")
+    script(src="/assets/js/drawsvg.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/TextPlugin.min.js")
+
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="/assets/js/app.js" async)

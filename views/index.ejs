@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Seek Afrique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div>
+    Choose your language:
+    <ul>
+      <li><a class="<%=(lang==" fr"?"active":"")%>" href="/?clang=fr">French</a></li>
+      <li><a class="<%=(lang==" en"?"active":"")%>" href="/?clang=en">English</a></li>
+    </ul>
+
+    <p>
+      <%=t.WELCOME_MSG%>
+    </p>
+
+  </div>
+</body>
+
+</html>
