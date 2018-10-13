@@ -1,18 +1,37 @@
 version: '3.7'
 services:
   seekafrique:
-    image: javik223/seekafrique:0.0.5
+    image: javik223/seekafrique:0.0.13
     container_name: 'seekafrique_web'
     env_file:
-      - webvariables.env
+      - .env
     ports:
       - 8085:80
+    networks:
+      - webnet
+      - default
+    depends_on:
+      - seekafrique_mongo
+
+
   seekafrique_mongo:
       image: mvertes/alpine-mongo
       container_name: 'seekafrique_mongo'
+      # expose:
+      #   - 27017
       ports:
         - 27017:27017
       volumes:
         - seekafrique_mongo:/data/db
+      networks:
+        - webnet
+      # links:
+      #   - seekafrique
 volumes:
   seekafrique_mongo:
+
+networks:
+  webnet:
+  default:
+      external:
+        name: weboverlay

@@ -9,6 +9,8 @@ const csrf = require('csurf');
 const bodyParser = require('body-parser');
 const signup = require('./signup');
 
+require('dotenv').config();
+
 const port = process.env.NODE_PORT || 80
 
 const map = fs.readFileSync(__dirname + "/assets/img/map.svg", {
@@ -28,7 +30,7 @@ const parseForm = bodyParser.urlencoded({
 
 app.set('view engine', 'pug');
 
-app.use(morgan('tiny'));
+app.use(morgan(process.env.MORGAN_FORMAT || tiny));
 app.use(cookieParser("i18n_seekafrique"));
 app.use(session({
   secret: "i18n_seekafrique",
