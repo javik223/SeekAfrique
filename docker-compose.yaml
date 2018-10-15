@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   seekafrique:
-    image: javik223/seekafrique:0.0.13
+    image: javik223/seekafrique:0.0.14
     container_name: 'seekafrique_web'
     env_file:
       - .env

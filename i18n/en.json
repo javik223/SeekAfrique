@@ -11,13 +11,10 @@
 	"select-language": "Select Language",
 	"error-message-name": "Your name is required",
 	"error-message-email": "Please enter a valid email address",
-	"Welcome": "Hi, welcome to our site",
-	"Language": "Please choose your language",
-	"Contact Information": "1 Elf rd, Unicorn Village, Wonderland, Earth",
-	"Message successful": "Your sign-up is successful. We will contact you as soon as we have opportunities for you.",
+	"Message successful": "Your sign-up is successful. We will notify you of open opportunities and other valuable information.",
 	"Message error": "There was an error in signing you up. Please try again",
 	"email-subject": "Signup confirmation",
 	"email-greeting": "Hello",
-	"email-body": "Thank you for registering your interest to get opportunities from SeekAfrique. This email is a confirmation of your registration. We will send you an email when we have open opportunities and other valuable information.",
+	"email-body": "Thank you for registering your interest to get opportunities from SeekAfrique. This email is a confirmation of your registration. We will notify you of open opportunities and other valuable information.",
 	"email-privacy": "We respect your privacy. If at any time you wish to stop receiving messages from us, you can unsubscribe using the link below."
 }
